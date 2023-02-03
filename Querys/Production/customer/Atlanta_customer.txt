@@ -1,0 +1,6 @@
+select ROLZIP   AS ZIPCODE,
+       MILES,
+       ROLCTY   AS CITY,
+       ROLSTA   AS STATE,
+       SSLAMT   AS LINEHAUL
+FROM tmxportal.base_rates_atl

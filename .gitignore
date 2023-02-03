@@ -1,0 +1,5 @@
+.idea/
+Config.txt
+/Downloads/*
+!/Downloads/
+old/

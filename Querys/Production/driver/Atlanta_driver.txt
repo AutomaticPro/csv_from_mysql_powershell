@@ -1,0 +1,6 @@
+select ROLZIP   AS ZIPCODE,
+       MILES,
+       ROLCTY   AS CITY,
+       ROLSTA   AS STATE,
+       DRVTOT   AS DRIVERTOTAL
+FROM tmxportal.base_rates_atl

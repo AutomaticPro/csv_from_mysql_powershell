@@ -1,0 +1,4 @@
+set DB_HOST=localhost
+set DB_USER=user24
+set DB_PASSWORD=123456
+set DB_DATABASE=tmxportal
