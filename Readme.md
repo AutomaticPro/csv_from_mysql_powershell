@@ -4,17 +4,26 @@
 
      String connection to DB:
           .\Config.txt
-          Because of privacy only Config_sample.txt is available on this repository 
-     
-     Mysql Queries: 
-          .\Querys\*.txt 
-          Queries does not require semicolon ; at the end
+          Privacy only Config_sample.txt is available on this repository 
+    
+    Mysql Queries:
+        .\Querys\*.txt 
+        Queries does not require semicolon ; at the end
 
-     Previuos Execution Commands first time only:
-          Unblock-File .\Csv_from_MySql_Main.ps1
-          Unblock-File .\Download_and_Connection.ps1
-     
-     Execution Command: 
-          pwsh .\Csv_from_MySql_Main.ps1
+Previuos Execution Commands First Time only:
 
-     Commands needs to be excecuted on Powershell Command Line interface
+    Unblock-File .\Csv_from_MySql_Main.ps1
+    Unblock-File .\Download_and_Connection.ps1
+     
+Execution Command:
+
+    pwsh .\Csv_from_MySql_Main.ps1
+
+Results: 
+
+    .\Downloads\Production\customer\*.csv
+    .\Downloads\Production\driver\*.csv
+    .\Downloads\QualityControl\*.csv
+    Privacy .csv files are not available on this repo
+
+Commands execution: Powershell Command Line interface

@@ -1,5 +1,7 @@
 .idea/
 Config.txt
-/Downloads/*
-!/Downloads/
+Downloads/Production/customer/*.csv
+Downloads/Production/driver/*.csv
+Downloads/QualityControl/*.csv
+Downloads/DetailsUpdates.txt
 old/
