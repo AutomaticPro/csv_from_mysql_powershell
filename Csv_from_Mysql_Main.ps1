@@ -41,8 +41,6 @@ $Connection.Open()
 #region QualityControl. This is for deliver to QA
 
 
-.\Downloads\QualityControl\
-
 #region Production\customer.
     $queryFiles = Get-ChildItem -Path ".\Querys\Production\customer" -Filter "*.txt" | `
                                 ForEach-Object { $_.Name.Replace('.txt', '') }
