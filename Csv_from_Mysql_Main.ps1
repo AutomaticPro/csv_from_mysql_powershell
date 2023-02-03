@@ -30,94 +30,39 @@ $Connection.ConnectionString = $ConnectionString
 
 $Connection.Open()
 
-
 #region QualityControl. This is for deliver to QA
-    $csvFile = 'QualityControl\Atlanta_QC'
-    Export-MySqlToCsv -csvFile $csvFile -direccion $direccion -Connection $Connection
+    $queryFiles = Get-ChildItem -Path ".\Querys\QualityControl" -Filter "*.txt" | `
+                                ForEach-Object { $_.Name.Replace('.txt', '') }
 
-    $csvFile = 'QualityControl\Charleston_QC'
-    Export-MySqlToCsv -csvFile $csvFile -direccion $direccion -Connection $Connection
+        for ($i=0; $i -lt $queryFiles.Count; $i++) {
+            $csvFile = "QualityControl\" + $queryFiles[$i]
+            Export-MySqlToCsv -csvFile $csvFile -direccion $direccion -Connection $Connection
+        }
+#region QualityControl. This is for deliver to QA
 
-    $csvFile = 'QualityControl\Houston_QC'
-    Export-MySqlToCsv -csvFile $csvFile -direccion $direccion -Connection $Connection
 
-    $csvFile = 'QualityControl\Jacksonville_QC'
-    Export-MySqlToCsv -csvFile $csvFile -direccion $direccion -Connection $Connection
+.\Downloads\QualityControl\
 
-    $csvFile = 'QualityControl\Norfolk_QC'
-    Export-MySqlToCsv -csvFile $csvFile -direccion $direccion -Connection $Connection
+#region Production\customer.
+    $queryFiles = Get-ChildItem -Path ".\Querys\Production\customer" -Filter "*.txt" | `
+                                ForEach-Object { $_.Name.Replace('.txt', '') }
 
-    $csvFile = 'QualityControl\Savannah_QC'
-    Export-MySqlToCsv -csvFile $csvFile -direccion $direccion -Connection $Connection
+    for ($i=0; $i -lt $queryFiles.Count; $i++) {
+        $csvFile = "Production\customer\" + $queryFiles[$i]
+        Export-MySqlToCsv -csvFile $csvFile -direccion $direccion -Connection $Connection
+    }
+#region QualityControl. This is for deliver to QA
 
-    $csvFile = 'QualityControl\Linden_QC'
-    Export-MySqlToCsv -csvFile $csvFile -direccion $direccion -Connection $Connection
 
-    $csvFile = 'QualityControl\Wilmington_QC'
-    Export-MySqlToCsv -csvFile $csvFile -direccion $direccion -Connection $Connection
+#region Production\driver.
+    $queryFiles = Get-ChildItem -Path ".\Querys\Production\driver" -Filter "*.txt" | `
+                                ForEach-Object { $_.Name.Replace('.txt', '') }
 
-    $csvFile = 'QualityControl\Mobile_QC'
-    Export-MySqlToCsv -csvFile $csvFile -direccion $direccion -Connection $Connection
-# endregion
-
-# region Production\customer.
-    $csvFile = 'Production\customer\Atlanta_customer'
-    Export-MySqlToCsv -csvFile $csvFile -direccion $direccion -Connection $Connection
-
-    $csvFile = 'Production\customer\Charleston_customer'
-    Export-MySqlToCsv -csvFile $csvFile -direccion $direccion -Connection $Connection
-
-    $csvFile = 'Production\customer\Houston_customer'
-    Export-MySqlToCsv -csvFile $csvFile -direccion $direccion -Connection $Connection
-
-    $csvFile = 'Production\customer\Jacksonville_customer'
-    Export-MySqlToCsv -csvFile $csvFile -direccion $direccion -Connection $Connection
-
-    $csvFile = 'Production\customer\Savannah_customer'
-    Export-MySqlToCsv -csvFile $csvFile -direccion $direccion -Connection $Connection
-
-    $csvFile = 'Production\customer\Norfolk_customer'
-    Export-MySqlToCsv -csvFile $csvFile -direccion $direccion -Connection $Connection
-
-    $csvFile = 'Production\customer\Linden_customer'
-    Export-MySqlToCsv -csvFile $csvFile -direccion $direccion -Connection $Connection
-
-    $csvFile = 'Production\customer\Wilmington_customer'
-    Export-MySqlToCsv -csvFile $csvFile -direccion $direccion -Connection $Connection
-
-    $csvFile = 'Production\customer\Mobile_customer'
-    Export-MySqlToCsv -csvFile $csvFile -direccion $direccion -Connection $Connection
-# endregion
-
-# region Production\driver.
-    $csvFile = 'Production\driver\Atlanta_driver'
-    Export-MySqlToCsv -csvFile $csvFile -direccion $direccion -Connection $Connection
-
-    $csvFile = 'Production\driver\Charleston_driver'
-    Export-MySqlToCsv -csvFile $csvFile -direccion $direccion -Connection $Connection
-
-    $csvFile = 'Production\driver\Houston_driver'
-    Export-MySqlToCsv -csvFile $csvFile -direccion $direccion -Connection $Connection
-
-    $csvFile = 'Production\driver\Jacksonville_driver'
-    Export-MySqlToCsv -csvFile $csvFile -direccion $direccion -Connection $Connection
-
-    $csvFile = 'Production\driver\Savannah_driver'
-    Export-MySqlToCsv -csvFile $csvFile -direccion $direccion -Connection $Connection
-
-    $csvFile = 'Production\driver\Norfolk_driver'
-    Export-MySqlToCsv -csvFile $csvFile -direccion $direccion -Connection $Connection
-
-    $csvFile = 'Production\driver\Linden_driver'
-    Export-MySqlToCsv -csvFile $csvFile -direccion $direccion -Connection $Connection
-
-    $csvFile = 'Production\driver\Wilmington_driver'
-    Export-MySqlToCsv -csvFile $csvFile -direccion $direccion -Connection $Connection
-
-    $csvFile = 'Production\driver\Mobile_driver'
-    Export-MySqlToCsv -csvFile $csvFile -direccion $direccion -Connection $Connection
-
-# endregion
+    for ($i=0; $i -lt $queryFiles.Count; $i++) {
+        $csvFile = "Production\driver\" + $queryFiles[$i]
+        Export-MySqlToCsv -csvFile $csvFile -direccion $direccion -Connection $Connection
+    }
+#region QualityControl. This is for deliver to QA
 
 $Connection.Close()
 
