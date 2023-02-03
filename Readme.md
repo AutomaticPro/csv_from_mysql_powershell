@@ -27,3 +27,7 @@ Results:
     Privacy .csv files are not available on this repo
 
 Commands execution: Powershell Command Line interface
+
+Source local path(owner reference only):
+
+    .\AllMatters\Modulos\XLSX_from_CSV_from_MySql\
